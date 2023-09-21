@@ -1,5 +1,6 @@
 package com.example.mad_practical_8_21012011079
 
+import android.app.TimePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -19,7 +20,11 @@ class MainActivity : AppCompatActivity() {
         card.visibility = View.GONE
 
         addAlarm.setOnClickListener {
-            card.visibility = View.VISIBLE
+            TimePickerDialog(this, {tp, hour, minute -> setAlarmTime(hour,minute)},11,0,false).show()
         }
+    }
+
+    fun setAlarmTime(hour : Int, minute : Int) {
+        //card.visibility = View.VISIBLE
     }
 }
